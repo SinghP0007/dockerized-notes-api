@@ -1,0 +1,17 @@
+services:
+    notes-api:
+      build:
+        context: .
+        dockerfile: Dockerfile
+
+      ports:
+        - "5000:5000"
+
+      environment:  
+        DB_PATH: /data/notes.db
+
+      volumes:
+        - notes_data:/data
+
+volumes:
+  notes_data:
